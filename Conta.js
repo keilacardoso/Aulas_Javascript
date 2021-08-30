@@ -1,5 +1,9 @@
+//Classe Abstrata
 export class Conta{
     constructor(saldoInicial, agencia, cliente){
+        if(this.constructo == Conta){
+            throw new Error("Error! Tryng to instantiate an abstrac class");
+        }
         this._saldo = saldoInicial;
         this._agencia = agencia;
         this._cliente = cliente;
@@ -18,10 +22,9 @@ export class Conta{
         return this._cliente;
     }
 
-    // um método publico consumindo um metodo privado
+    //metodo abstrato
     sacar(valor){
-        let taxa = 1
-        return this._sacar(valor, taxa);
+        throw new Error('Abstract Method')
     }
 
     _sacar(valor, taxa){
